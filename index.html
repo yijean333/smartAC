@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SmartAC 智慧冷氣管家</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>SmartAC 智慧冷氣管家</h1>
+            <p>室內環境監測與異味分析系統</p>
+        </header>
+
+        <div class="dashboard">
+
+            <!-- 左上：即時環境監測 -->
+            <section>
+                <h2>即時環境監測</h2>
+                <p class="note" id="sensorStatus">正在取得感測數據...</p>
+                <p class="note">
+                    最後更新時間：
+                    <span id="lastUpdate">--</span>
+                </p>
+
+                <p>室內溫度：
+                    <span id="temperature">--</span> °C
+                </p>
+
+                <p>相對濕度：
+                    <span id="humidity">--</span> %
+                </p>
+
+                <p>TVOC：
+                    <span id="tvoc">--</span> ppb
+                </p>
+
+                <button id="saveBtn">
+                    儲存目前感測數據
+                </button>
+            </section>
+
+            <!-- 右上：異味回報 -->
+            <section>
+                <h2>異味回報</h2>
+
+                <p>目前是否聞到霉味？</p>
+
+                <label for="odor">異味狀況：</label>
+                <select id="odor">
+                    <option value="no">沒有霉味</option>
+                    <option value="yes">有霉味</option>
+                </select>
+
+                <p class="note">
+                    系統會自動記錄回報當下的
+                    溫度、濕度及 TVOC。
+                </p>
+
+                <button id="odorBtn">
+                    儲存異味回報
+                </button>
+            </section>
+
+            <!-- 左下：歷史感測紀錄 -->
+            <section>
+                <h2>歷史感測紀錄</h2>
+
+                <button id="refreshBtn">
+                    重新整理
+                </button>
+
+                <ul id="history"></ul>
+            </section>
+
+            <!-- 右下：歷史異味回報 -->
+            <section>
+                <h2>歷史異味回報</h2>
+
+                <button id="refreshOdorBtn">
+                    重新整理
+                </button>
+
+                <ul id="odorHistory"></ul>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
